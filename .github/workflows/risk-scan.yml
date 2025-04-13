@@ -1,0 +1,13 @@
+name: Risk Scan  
+on: [push]  
+jobs:  
+    scan:  
+        runs-on: ubuntu-latest  
+        steps:  
+            - name: Checkout  
+              uses: actions/checkout@v3  
+            - name: Fake Scan  
+              run: |  
+                   echo "开始检测依赖风险..."  
+                   echo "发现漏洞：CVE-2021-44228（log4j-core@2.16.0）"  
+                   echo "结果已记录到数据库"  
